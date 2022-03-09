@@ -1,0 +1,105 @@
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  color: #6d6d6d;
+  margin: 60px 30px;
+  font-size: 18px;
+}
+
+h2 {
+  font-weight: 500;
+  color: #00ce9a;
+  font-size: 28px;
+}
+
+form {
+  display: inline;
+  margin: 0 0 0 5px;
+}
+
+input {
+  padding: 5px;
+}
+button {
+  border: 1px solid #00ce9a;
+  border-radius: 4px;
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+}
+
+button:hover {
+  border: 1px solid #fff;
+  background-color: #00ce9a;
+}
+
+p {
+  color: #6d6d6d;
+  font-size: 14px;
+}
+
+.container {
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid #00ce9a;
+  margin: 60px auto;
+  padding: 50px;
+}
+
+.city {
+  border: 1px solid #00ce9a;
+}
+
+.bi-search {
+  color: #6d6d6d;
+}
+
+.bi-search:hover {
+  color: #fff;
+}
+
+.bi-geo-alt-fill {
+  color: #6d6d6d;
+}
+
+.bi-geo-alt-fill:hover {
+  color: #fff;
+}
+
+.current-time {
+  color: #6d6d6d;
+  margin: -5px 0 20px 0;
+}
+
+.current-weather-emoji {
+  text-align: center;
+  font-size: 84px;
+  margin: 0 0 -24px 0;
+}
+
+.current-weather {
+  text-align: center;
+  font-size: 20px;
+  color: #00ce9a;
+}
+
+.forecast {
+  margin: 48px 0;
+  padding: 15px 0;
+  background: rgb(200, 200, 200, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.forecast-emoji {
+  font-size: 36px;
+  margin: -20px 0 0 0;
+}
+
+.forecast-detail {
+  font-size: 14px;
+  color: #6d6d6d;
+}
