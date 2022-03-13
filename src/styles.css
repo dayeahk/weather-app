@@ -6,13 +6,13 @@ h2 {
 h1 {
   color: #6d6d6d;
   margin: 60px 30px;
-  font-size: 18px;
 }
 
 h2 {
   font-weight: 500;
   color: #00ce9a;
   font-size: 28px;
+  padding: 20px 0;
 }
 
 form {
@@ -39,6 +39,11 @@ button:hover {
 p {
   color: #6d6d6d;
   font-size: 14px;
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
 }
 
 .container {
@@ -81,8 +86,9 @@ p {
 
 .current-weather {
   text-align: center;
-  font-size: 20px;
+  font-size: 28px;
   color: #00ce9a;
+  padding: 60px 0;
 }
 
 .forecast {
