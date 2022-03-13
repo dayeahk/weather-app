@@ -21,95 +21,101 @@
 
   <body>
     <div class="container">
-      <h1>
-        What is the weather like in...
-        <form>
-          <input
-            type="text"
-            placeholder="Enter a city"
-            class="city"
-            id="city"
-          />
-          <button class="search">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="currentColor"
-              class="bi bi-search"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-              />
-            </svg>
-          </button>
-          <button class="position">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="currentColor"
-              class="bi bi-geo-alt-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
-              />
-            </svg>
-          </button>
-        </form>
-      </h1>
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col-5">
-          <h2>Type the city :)</h2>
-          <div id="current-time">Saturday 20:36</div>
-          <p>
-            Humidity: <span id="humidity"></span>
-            <br />
-            Wind Speed: <span id="wind-speed"></span>m/s
-          </p>
-        </div>
-        <div class="col-5">
-          <div class="current-weather">
-            <span id="current-description"></span> /
-            <span id="current-temp"></span>
-          </div>
-        </div>
-        <div class="col-1"></div>
-      </div>
-      <div class="forecast">
+      <div class="weather-container">
+        <h1>
+          What is the weather like in...
+          <form>
+            <input
+              type="text"
+              placeholder="Enter a city"
+              class="city"
+              id="city"
+            />
+            <button class="search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+            </button>
+            <button class="position">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-geo-alt-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                />
+              </svg>
+            </button>
+          </form>
+        </h1>
         <div class="row">
           <div class="col-1"></div>
-          <div class="col-2">
-            <p>Sun</p>
-            <p class="forecast-emoji">🌧</p>
-            <span class="forecast-detail"> 6° / 2°</span>
+          <div class="col-5">
+            <h2>Type the city :)</h2>
+            <div id="current-time">Saturday 20:36</div>
+            <p>
+              Humidity: <span id="humidity"></span>
+              <br />
+              Wind Speed: <span id="wind-speed"></span>m/s
+            </p>
           </div>
-          <div class="col-2">
-            <p>Mon</p>
-            <p class="forecast-emoji">⛅️</p>
-            <span class="forecast-detail"> 6° / 3°</span>
-          </div>
-          <div class="col-2">
-            <p>Tue</p>
-            <p class="forecast-emoji">🌧</p>
-            <span class="forecast-detail"> 8° / 4°</span>
-          </div>
-          <div class="col-2">
-            <p>Wed</p>
-            <p class="forecast-emoji">🌧</p>
-            <span class="forecast-detail"> 8° / 3°</span>
-          </div>
-          <div class="col-2">
-            <p>Thu</p>
-            <p class="forecast-emoji">🌧</p>
-            <span class="forecast-detail"> 6° / 2°</span>
+          <div class="col-5">
+            <div class="current-weather">
+              <span id="current-description"></span> /
+              <span id="current-temp"></span>
+            </div>
           </div>
           <div class="col-1"></div>
         </div>
+        <div class="forecast">
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-2">
+              <p>Sun</p>
+              <p class="forecast-emoji">🌧</p>
+              <span class="forecast-detail"> 6° / 2°</span>
+            </div>
+            <div class="col-2">
+              <p>Mon</p>
+              <p class="forecast-emoji">⛅️</p>
+              <span class="forecast-detail"> 6° / 3°</span>
+            </div>
+            <div class="col-2">
+              <p>Tue</p>
+              <p class="forecast-emoji">🌧</p>
+              <span class="forecast-detail"> 8° / 4°</span>
+            </div>
+            <div class="col-2">
+              <p>Wed</p>
+              <p class="forecast-emoji">🌧</p>
+              <span class="forecast-detail"> 8° / 3°</span>
+            </div>
+            <div class="col-2">
+              <p>Thu</p>
+              <p class="forecast-emoji">🌧</p>
+              <span class="forecast-detail"> 6° / 2°</span>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
       </div>
+      <span class="github-link">
+        <a href="https://github.com/dayeahk/weather-app">Open-source code</a>
+        by Da-ye Kwon</span
+      >
     </div>
     <script src="src/index.js"></script>
   </body>

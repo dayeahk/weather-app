@@ -48,9 +48,12 @@ svg {
 
 .container {
   font-family: "Montserrat", sans-serif;
+}
+
+.weather-container {
   border: 1px solid #00ce9a;
-  margin: 60px auto;
-  padding: 50px;
+  margin: 60px auto 0 auto;
+  padding: 30px;
 }
 
 .city {
@@ -108,4 +111,8 @@ svg {
 .forecast-detail {
   font-size: 14px;
   color: #6d6d6d;
+}
+
+.github-link {
+  font-size: 12px;
 }
