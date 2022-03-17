@@ -91,6 +91,7 @@ svg {
 
 .current-weather {
   text-align: center;
+  text-transform: capitalize;
   font-size: 28px;
   color: #00ce9a;
   padding: 60px 0;

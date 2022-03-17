@@ -25,6 +25,26 @@ let time = document.querySelector("#current-time");
 let currentTime = new Date();
 time.innerHTML = showTime(currentTime);
 
+function defaultWeather(response) {
+  let defaultCity = document.querySelector("h2");
+  defaultCity.innerHTML = response.data.name;
+  let temperature = Math.round(response.data.main.temp);
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = `${temperature}°C`;
+  let description = response.data.weather[0].main;
+  let currentDescription = document.querySelector("#current-description");
+  currentDescription.innerHTML = description;
+  let currentHumidity = response.data.main.humidity;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${currentHumidity}%`;
+  let currentWind = Math.round(response.data.wind.speed);
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = `${currentWind}`;
+}
+
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Copenhagen&appid=1a14757dd318c14f3e6b090d5f4a85f7&units=metric`;
+axios.get(apiUrl).then(defaultWeather);
+
 function searching(city) {
   city.preventDefault();
   let h2 = document.querySelector("h2");
