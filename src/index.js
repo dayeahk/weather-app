@@ -40,6 +40,11 @@ function defaultWeather(response) {
   let currentWind = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = `${currentWind}`;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Copenhagen&appid=1a14757dd318c14f3e6b090d5f4a85f7&units=metric`;
@@ -52,6 +57,7 @@ function searching(city) {
   h2.innerHTML = `${cityInput.value}`;
 
   function showWeather(response) {
+    console.log(response.data);
     let temperature = Math.round(response.data.main.temp);
     let currentTemp = document.querySelector("#current-temp");
     currentTemp.innerHTML = `${temperature}°C`;
@@ -64,6 +70,11 @@ function searching(city) {
     let currentWind = Math.round(response.data.wind.speed);
     let windSpeed = document.querySelector("#wind-speed");
     windSpeed.innerHTML = `${currentWind}`;
+    let icon = document.querySelector("#icon");
+    icon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   }
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=1a14757dd318c14f3e6b090d5f4a85f7&units=metric`;
@@ -88,6 +99,11 @@ function showGeoWeather(response) {
   let currentWind = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = `${currentWind}`;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function showPosition(position) {

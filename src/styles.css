@@ -20,7 +20,6 @@ form {
   display: inline;
   margin: 0 0 0 5px;
 }
-
 input {
   padding: 5px;
 }
@@ -83,10 +82,11 @@ svg {
   margin: -5px 0 20px 0;
 }
 
-.current-weather-emoji {
+.weather-icon {
   text-align: center;
   font-size: 84px;
-  margin: 0 0 -24px 0;
+  display: block;
+  margin: 0 auto;
 }
 
 .current-weather {
@@ -94,7 +94,7 @@ svg {
   text-transform: capitalize;
   font-size: 28px;
   color: #00ce9a;
-  padding: 60px 0;
+  padding: 0pxß;
 }
 
 .forecast {
