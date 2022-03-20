@@ -46,6 +46,11 @@ svg {
   margin: 0 auto;
 }
 
+a {
+  color: #00ce9a;
+  text-decoration: underline;
+}
+
 .container {
   font-family: "Montserrat", sans-serif;
 }
@@ -95,6 +100,17 @@ svg {
   font-size: 28px;
   color: #00ce9a;
   padding: 0pxß;
+}
+
+.current-weather .active {
+  color: #6d6d6d;
+  cursor: default;
+  text-decoration: none;
+}
+
+.units {
+  font-size: small;
+  vertical-align: super;
 }
 
 .forecast {

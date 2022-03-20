@@ -1,3 +1,4 @@
+// time formating
 function showTime(date) {
   let days = [
     "Sunday",
@@ -25,12 +26,15 @@ let time = document.querySelector("#current-time");
 let currentTime = new Date();
 time.innerHTML = showTime(currentTime);
 
-function defaultWeather(response) {
-  let defaultCity = document.querySelector("h2");
-  defaultCity.innerHTML = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
+// displaying weather search
+
+function showWeather(response) {
+  let citySearched = document.querySelector("h2");
+  citySearched.innerHTML = response.data.name;
+  celciusTemp = response.data.main.temp;
+  let temperature = Math.round(celciusTemp);
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = `${temperature}°C`;
+  currentTemp.innerHTML = `${temperature}`;
   let description = response.data.weather[0].main;
   let currentDescription = document.querySelector("#current-description");
   currentDescription.innerHTML = description;
@@ -47,47 +51,56 @@ function defaultWeather(response) {
   );
 }
 
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Copenhagen&appid=1a14757dd318c14f3e6b090d5f4a85f7&units=metric`;
-axios.get(apiUrl).then(defaultWeather);
-
-function searching(city) {
-  city.preventDefault();
-  let h2 = document.querySelector("h2");
-  let cityInput = document.querySelector("#city");
-  h2.innerHTML = `${cityInput.value}`;
-
-  function showWeather(response) {
-    console.log(response.data);
-    let temperature = Math.round(response.data.main.temp);
-    let currentTemp = document.querySelector("#current-temp");
-    currentTemp.innerHTML = `${temperature}°C`;
-    let description = response.data.weather[0].main;
-    let currentDescription = document.querySelector("#current-description");
-    currentDescription.innerHTML = description;
-    let currentHumidity = response.data.main.humidity;
-    let humidity = document.querySelector("#humidity");
-    humidity.innerHTML = `${currentHumidity}%`;
-    let currentWind = Math.round(response.data.wind.speed);
-    let windSpeed = document.querySelector("#wind-speed");
-    windSpeed.innerHTML = `${currentWind}`;
-    let icon = document.querySelector("#icon");
-    icon.setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-  }
-
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=1a14757dd318c14f3e6b090d5f4a85f7&units=metric`;
+function search(city) {
+  let apiKey = "1a14757dd318c14f3e6b090d5f4a85f7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 
+function getCity(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city");
+  search(cityInput.value);
+}
+
+search("Copenhagen");
+
+// Unit conversion
+
+function convertToFarenheit(event) {
+  event.preventDefault();
+  celciusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+  let currentTemp = document.querySelector("#current-temp");
+  let farenheitTemp = (celciusTemp * 9) / 5 + 32;
+  currentTemp.innerHTML = Math.round(farenheitTemp);
+}
+
+function convertToCelcius(event) {
+  event.preventDefault();
+  celciusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = Math.round(celciusTemp);
+}
+
+let celciusTemp = null;
+
 let citySearch = document.querySelector("form");
-citySearch.addEventListener("click", searching);
+citySearch.addEventListener("click", getCity);
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", convertToFarenheit);
+
+let celciusLink = document.querySelector("#celsius-link");
+celciusLink.addEventListener("click", convertToCelcius);
+
+// displaying weather by location
 
 function showGeoWeather(response) {
   let geoTemp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = `${geoTemp}°C`;
+  currentTemp.innerHTML = `${geoTemp}`;
   let geoDesc = response.data.weather[0].main;
   let currentDescription = document.querySelector("#current-description");
   currentDescription.innerHTML = geoDesc;
