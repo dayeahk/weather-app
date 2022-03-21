@@ -11,7 +11,7 @@ h1 {
 
 h2 {
   font-weight: 500;
-  color: #00ce9a;
+  color: #2abf97;
   font-size: 36px;
   padding: 20px 0;
 }
@@ -24,7 +24,7 @@ input {
   padding: 5px;
 }
 button {
-  border: 1px solid #00ce9a;
+  border: 1px solid #2abf97;
   border-radius: 4px;
   background-color: #fff;
   height: 40px;
@@ -33,7 +33,7 @@ button {
 
 button:hover {
   border: 1px solid #fff;
-  background-color: #00ce9a;
+  background-color: #2abf97;
 }
 
 p {
@@ -47,7 +47,7 @@ svg {
 }
 
 a {
-  color: #00ce9a;
+  color: #2abf97;
   text-decoration: underline;
 }
 
@@ -56,14 +56,14 @@ a {
 }
 
 .weather-container {
-  border: 1px solid #00ce9a;
+  border: 1px solid #2abf97;
   border-radius: 5px;
   margin: 60px auto 0 auto;
   padding: 30px;
 }
 
 .city {
-  border: 1px solid #00ce9a;
+  border: 1px solid #2abf97;
 }
 
 .bi-search {
@@ -98,7 +98,7 @@ a {
   text-align: center;
   text-transform: capitalize;
   font-size: 28px;
-  color: #00ce9a;
+  color: #2abf97;
   padding: 0pxß;
 }
 
@@ -120,16 +120,20 @@ a {
   border-radius: 10px;
   padding: 20px;
   text-align: center;
-}
-
-.forecast-emoji {
-  font-size: 36px;
-  margin: -20px 0 0 0;
-}
-
-.forecast-detail {
   font-size: 14px;
-  color: #6d6d6d;
+}
+
+.forecast-icon {
+  display: block;
+  margin: 0 auto;
+}
+
+.forecast-temperature-high {
+  color: #2abf97;
+}
+
+.forecast-temperature-low {
+  opacity: 0.5;
 }
 
 .github-link {
